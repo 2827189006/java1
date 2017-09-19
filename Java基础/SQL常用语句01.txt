@@ -1,0 +1,43 @@
+--数据库检查语句
+use master 
+if exists(select * from sysdatabases where name='BBS')
+   drop database BBS
+go
+--建数据库语句
+create database(数据库名)
+go
+--表检查语句
+if exists(select * from sys.objects where name='OrderInfo')
+   drop table OrderInfo
+--建表语句
+create table(表名)
+go
+--主键
+primary key,
+--外键
+references usersinfo(c_id),
+--约束
+ check(u_age>10 and u_age<30), 
+--自增
+identity(1,1),
+--表查询
+select *from 表名
+--列查询
+select 列名from表名
+--查询表格前四项
+select  top 4 * from 表名name 
+--降序查询
+select * from 表名
+order by 列名desc
+--过滤查询
+select distinct 列名from 表名
+--添加语句
+insert into BBSUSE values(,'','','',)
+
+insert into BBSUSE values('','','','',,,,)
+insert into BBSUSE values()
+insert into BBSUSE values()
+--修改
+update 表名 set 列名='修改的内容' where 列名=要修改的列名或编号;
+--删除
+delete from 表名where 要删除的列或者表名
